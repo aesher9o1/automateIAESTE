@@ -2,9 +2,9 @@
 Python script to generate factsheets. Specifically tailored for IAESTE MUJ
 
 ## Steps to generate file
-Install Pandas and Python-docx
-Add all the xlsx files in the folder containing the script 
-Run the python file
+1. Install Pandas and Python-docx
+2. Add all the xlsx files in the folder containing the script 
+3. Run the python file
 
 
-## HARDCODED FOR XLSX ONLY
+*HARDCODED FOR XLSX ONLY*
