@@ -43,16 +43,33 @@ for i in array_files:
 
         """Loop to generate factsheet"""
         for index, row in xl_file.iterrows():
-            document.add_paragraph("IAESTE ID:   " + str(row[0]))
-            document.add_paragraph("Branch:   " + str(row[1]))
-            document.add_paragraph("Number of Backlogs:  " + str(row[2]))
-            document.add_paragraph("Year of Study:   " + str(row[3]))
-            document.add_paragraph("CGPA:  " + str(row[4]))
-            document.add_heading('\n\nTechnical Skills:', level=1)
+            p = document.add_paragraph()
+            p.add_run("IAESTE ID:   ").bold = True
+            p.add_run(str(row[0]))
+            
+            p = document.add_paragraph()
+            p.add_run("Branch:   ").bold = True
+            p.add_run(str(row[1]))
+            
+            p = document.add_paragraph()
+            p.add_run("Number of Backlogs:  ").bold = True         
+            p.add_run(str(row[2]))
+
+            p = document.add_paragraph()
+            p.add_run("Year of Study:   ").bold = True
+            p.add_run(str(row[3]))
+            
+            p = document.add_paragraph()
+            p.add_run("CGPA:  ").bold = True
+            p.add_run(str(row[4]))
+            
+            document.add_heading('\nTechnical Skills:', level=0)
             document.add_paragraph(str(row[5]).strip())
-            document.add_heading('\n\nExtra-Curricular Activities & Skills:', level=1)
+            
+            document.add_heading('\nExtra-Curricular Activities & Skills:', level=0)
             document.add_paragraph(str(row[6]).strip())
-            document.add_heading('\n\nAptness:', level=1)
+            
+            document.add_heading('\nAptness:', level=0)
             document.add_paragraph(str(row[7]).strip())
             document.add_page_break()
             
