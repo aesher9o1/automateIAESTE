@@ -48,9 +48,12 @@ for i in array_files:
             document.add_paragraph("Number of Backlogs:  " + str(row[2]))
             document.add_paragraph("Year of Study:   " + str(row[3]))
             document.add_paragraph("CGPA:  " + str(row[4]))
-            document.add_paragraph("Technical Skills:   " + str(row[5]))
-            document.add_paragraph("Extra-Curricular Activities & Skills:   " + str(row[6]))
-            document.add_paragraph("Aptness:   "+str(row[7]))
+            document.add_heading('\n\nTechnical Skills:', level=1)
+            document.add_paragraph(str(row[5]).strip())
+            document.add_heading('\n\nExtra-Curricular Activities & Skills:', level=1)
+            document.add_paragraph(str(row[6]).strip())
+            document.add_heading('\n\nAptness:', level=1)
+            document.add_paragraph(str(row[7]).strip())
             document.add_page_break()
             
             row_cells = table.add_row().cells
@@ -60,6 +63,3 @@ for i in array_files:
             
 
         document.save('./factsheet/'+filename+'.docx')
-        
-        
-        
